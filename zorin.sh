@@ -1,15 +1,13 @@
 #!/usr/bin/env bash
 
-echo "███████╗ ██████╗ ██████╗ ██╗███╗   ██╗     ██████╗ ███████╗    ██████╗ ██████╗  ██████╗ "
-echo "╚══███╔╝██╔═══██╗██╔══██╗██║████╗  ██║    ██╔═══██╗██╔════╝    ██╔══██╗██╔══██╗██╔═══██╗"
-echo "  ███╔╝ ██║   ██║██████╔╝██║██╔██╗ ██║    ██║   ██║███████╗    ██████╔╝██████╔╝██║   ██║"
-echo " ███╔╝  ██║   ██║██╔══██╗██║██║╚██╗██║    ██║   ██║╚════██║    ██╔═══╝ ██╔══██╗██║   ██║"
-echo "███████╗╚██████╔╝██║  ██║██║██║ ╚████║    ╚██████╔╝███████║    ██║     ██║  ██║╚██████╔╝"
-echo "╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝     ╚═════╝ ╚══════╝    ╚═╝     ╚═╝  ╚═╝ ╚═════╝ "
+echo "███████╗ ██████╗ ██████╗ ██╗███╗  ██╗       ██████╗ ███████╗    ██████╗ ██████╗  ██████╗ "
+echo "╚══███╔╝██╔═══██╗██╔══██╗██║████╗ ██║      ██╔═══██╗██╔════╝    ██╔══██╗██╔══██╗██╔═══██╗"
+echo "  ███╔╝ ██║  ██║██████╔╝██║██╔██╗ ██║      ██║  ██║███████╗    ██████╔╝██████╔╝██║  ██║"
+echo " ███╔╝  ██║  ██║██╔══██╗██║██║╚██╗██║      ██║  ██║╚════██║    ██╔═══╝ ██╔══██╗██║  ██║"
+echo "███████╗╚██████╔╝██║  ██║██║██║ ╚████║      ╚██████╔╝███████║    ██║      ██║  ██║╚██████╔╝"
+echo "╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝       ╚═════╝ ╚══════╝    ╚═╝      ╚═╝  ╚═╝ ╚═════╝ "
 echo "|ZORIN-OS-PRO| |Script v3.1.1| |Maintained By Muhammed-Mert| |Original by NamelessNanasi/CortezJEL"
 echo ""
-echo "(Please note this version works on Zorin 16, 17, and 18)"
-sleep 3
 
 # Prompt user for sudo
 echo "Please Enter your sudo password!"
@@ -51,7 +49,7 @@ sudo apt install -y ca-certificates aptitude
 sleep 2
 echo "Updating the default source.list for Zorin's custom resources..."
 
-if [ "$sixteen" = "true" ]; then   
+if [ "$sixteen" = "true" ]; then    
     sudo cp -f ./zorin16.list /etc/apt/sources.list.d/zorin.list
 elif [ "$seventeen" = "true" ]; then
     sudo cp -f ./zorin17.list /etc/apt/sources.list.d/zorin.list
@@ -70,7 +68,7 @@ sleep 2
 echo "Adding premium content..."
 sudo aptitude update
 
-if [ "$sixteen" = "true" ]; then   
+if [ "$sixteen" = "true" ]; then    
     sudo aptitude install -y zorin-os-pro zorin-os-pro-creative-suite zorin-os-pro-productivity-apps zorin-os-pro-wallpapers zorin-os-pro-wallpapers-16
 elif [ "$seventeen" = "true" ]; then
     sudo aptitude install -y zorin-os-pro zorin-os-pro-creative-suite zorin-os-pro-productivity-apps zorin-os-pro-wallpapers zorin-os-pro-wallpapers-17
