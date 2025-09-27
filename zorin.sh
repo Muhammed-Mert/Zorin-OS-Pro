@@ -6,7 +6,7 @@ echo "  ███╔╝ ██║  ██║██████╔╝██║█
 echo " ███╔╝  ██║  ██║██╔══██╗██║██║╚██╗██║      ██║  ██║╚════██║    ██╔═══╝ ██╔══██╗██║  ██║"
 echo "███████╗╚██████╔╝██║  ██║██║██║ ╚████║      ╚██████╔╝███████║    ██║      ██║  ██║╚██████╔╝"
 echo "╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝       ╚═════╝ ╚══════╝    ╚═╝      ╚═╝  ╚═╝ ╚═════╝ "
-echo "|ZORIN-OS-PRO| |Script v3.1.1| |Maintained By Muhammed-Mert| |Original by NamelessNanasi/CortezJEL"
+echo "|ZORIN-OS-PRO| |Script v3.1.2| |Maintained By Muhammed-Mert| |Original by NamelessNanasi/CortezJEL"
 echo ""
 
 # Prompt user for sudo
@@ -44,7 +44,7 @@ case $version_choice in
 esac
 
 echo "Preparing to install dependencies..."
-sudo apt install -y ca-certificates aptitude
+sudo apt install -y ca-certificates aptitude curl
 
 sleep 2
 echo "Updating the default source.list for Zorin's custom resources..."
@@ -63,6 +63,21 @@ curl -sS https://packages.zorinos.com/zorin_os_key.asc | gpg --dearmor | sudo te
 sleep 2
 echo "Adding premium flags..."
 sudo cp -f ./99zorin-os-premium-user-agent /etc/apt/apt.conf.d/
+
+sleep 2
+echo "Installing Zorin Premium Keyring..."
+
+if [ "$sixteen" = "true" ] || [ "$seventeen" = "true" ]; then
+    curl -H 'DNT: 1' -H 'Sec-GPC: 1' -A 'Zorin OS Premium' \
+    https://packages.zorinos.com/premium/pool/main/z/zorin-os-premium-keyring/zorin-os-premium-keyring_1.0_all.deb \
+    --output zorin-os-premium-keyring_1.0_all.deb
+    sudo apt install -y ./zorin-os-premium-keyring_1.0_all.deb
+elif [ "$eighteen" = "true" ]; then
+    curl -H 'DNT: 1' -H 'Sec-GPC: 1' -A 'Zorin OS Premium' \
+    https://packages.zorinos.com/premium/pool/main/z/zorin-os-premium-keyring/zorin-os-premium-keyring_1.1_all.deb \
+    --output zorin-os-premium-keyring_1.1_all.deb
+    sudo apt install -y ./zorin-os-premium-keyring_1.1_all.deb
+fi
 
 sleep 2
 echo "Adding premium content..."
