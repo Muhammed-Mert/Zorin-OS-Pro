@@ -17,6 +17,16 @@ copy the command below, paste in your terminal, then put your password, wait for
 git clone https://github.com/Muhammed-Mert/Zorin-OS-Pro.git && cd Zorin-OS-Pro && chmod +x zorin.sh && sudo ./zorin.sh
 
 ```
+Changelog / Son Güncellemeler
+
+v3.1.0 – Added support for Zorin 18 Beta
+
+Updated script headers to show maintainer name (Muhammed Mert)
+
+Added automatic handling of Zorin 16, 17, and 18 repository lists
+
+Fixed minor installation messages and added better prompts
+
 CREDITS:
 - **NamelessNanasi / CortezJEL** – Original creator  
 - **Muhammed Mert** – Updated & maintained version
