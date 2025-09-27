@@ -6,7 +6,7 @@ echo "  ███╔╝ ██║  ██║██████╔╝██║█
 echo " ███╔╝  ██║  ██║██╔══██╗██║██║╚██╗██║      ██║  ██║╚════██║    ██╔═══╝ ██╔══██╗██║  ██║"
 echo "███████╗╚██████╔╝██║  ██║██║██║ ╚████║      ╚██████╔╝███████║    ██║      ██║  ██║╚██████╔╝"
 echo "╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝       ╚═════╝ ╚══════╝    ╚═╝      ╚═╝  ╚═╝ ╚═════╝ "
-echo "|ZORIN-OS-PRO| |Script v3.1.2| |Maintained By Muhammed-Mert| |Original by NamelessNanasi/CortezJEL"
+echo "|ZORIN-OS-PRO| |Script v3.1.3| |Maintained By Muhammed-Mert| |Original by NamelessNanasi/CortezJEL"
 echo ""
 
 # Prompt user for sudo
@@ -83,13 +83,24 @@ sleep 2
 echo "Adding premium content..."
 sudo aptitude update
 
+# Install Zorin Pro packages
 if [ "$sixteen" = "true" ]; then    
-    sudo aptitude install -y zorin-os-pro zorin-os-pro-creative-suite zorin-os-pro-productivity-apps zorin-os-pro-wallpapers zorin-os-pro-wallpapers-16
+    sudo aptitude install -y zorin-os-pro zorin-os-pro-creative-suite \
+    zorin-os-pro-productivity-apps zorin-os-pro-wallpapers zorin-os-pro-wallpapers-16 || true
 elif [ "$seventeen" = "true" ]; then
-    sudo aptitude install -y zorin-os-pro zorin-os-pro-creative-suite zorin-os-pro-productivity-apps zorin-os-pro-wallpapers zorin-os-pro-wallpapers-17
+    sudo aptitude install -y zorin-os-pro zorin-os-pro-creative-suite \
+    zorin-os-pro-productivity-apps zorin-os-pro-wallpapers zorin-os-pro-wallpapers-17 || true
 elif [ "$eighteen" = "true" ]; then
-    sudo aptitude install -y zorin-os-pro zorin-os-pro-creative-suite zorin-os-pro-productivity-apps zorin-os-pro-wallpapers zorin-os-pro-wallpapers-18
+    # Önce diğer paketleri kur
+    sudo aptitude install -y zorin-os-pro zorin-os-pro-creative-suite \
+    zorin-os-pro-productivity-apps zorin-os-pro-wallpapers #zorin-os-pro-wallpapers-18
 
+    # zorin-os-pro-wallpapers-18 check
+    if aptitude show zorin-os-pro-wallpapers-18 > /dev/null 2>&1; then
+        sudo aptitude install -y zorin-os-pro-wallpapers-18
+    else
+        echo "Package zorin-os-pro-wallpapers-18 not found in repo, skipping."
+    fi
 fi
 
 echo "All done!"
