@@ -88,8 +88,7 @@ if [ "$sixteen" = "true" ]; then
 elif [ "$seventeen" = "true" ]; then
     sudo aptitude install -y zorin-os-pro zorin-os-pro-creative-suite zorin-os-pro-productivity-apps zorin-os-pro-wallpapers zorin-os-pro-wallpapers-17
 elif [ "$eighteen" = "true" ]; then
-    sudo aptitude install -y zorin-os-pro zorin-os-pro-creative-suite \
-    zorin-os-pro-productivity-apps zorin-os-pro-wallpapers zorin-os-pro-wallpapers-18 || true
+    sudo aptitude install -y zorin-os-pro zorin-os-pro-creative-suite zorin-os-pro-productivity-apps zorin-os-pro-wallpapers zorin-os-pro-wallpapers-18
 
 fi
 
