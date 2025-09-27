@@ -1,0 +1,14 @@
+deb https://packages.zorinos.com/stable noble main
+deb-src https://packages.zorinos.com/stable noble main
+
+deb https://packages.zorinos.com/patches noble main
+deb-src https://packages.zorinos.com/patches noble main
+
+deb https://packages.zorinos.com/apps noble main
+deb-src https://packages.zorinos.com/apps noble main
+
+deb https://packages.zorinos.com/drivers noble main restricted
+deb-src https://packages.zorinos.com/drivers noble main restricted
+
+deb https://packages.zorinos.com/premium noble main
+deb-src https://packages.zorinos.com/premium noble main
