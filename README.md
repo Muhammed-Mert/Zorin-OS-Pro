@@ -23,5 +23,5 @@ git clone https://github.com/Muhammed-Mert/Zorin-OS-Pro.git && cd Zorin-OS-Pro &
 
 **Changelog**:
 
-v3.1.0 – Added support for Zorin 18 Beta
-v3.1.2 & v3.1.3 – Bugs fixed
+- v3.1.0 – Added support for Zorin 18 Beta
+- v3.1.2 & v3.1.3 – Bugs fixed
