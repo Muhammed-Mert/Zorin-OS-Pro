@@ -6,35 +6,44 @@ echo "  ███╔╝ ██║   ██║██████╔╝██║�
 echo " ███╔╝  ██║   ██║██╔══██╗██║██║╚██╗██║    ██║   ██║╚════██║    ██╔═══╝ ██╔══██╗██║   ██║"
 echo "███████╗╚██████╔╝██║  ██║██║██║ ╚████║    ╚██████╔╝███████║    ██║     ██║  ██║╚██████╔╝"
 echo "╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝     ╚═════╝ ╚══════╝    ╚═╝     ╚═╝  ╚═╝ ╚═════╝ "
-echo "|ZORIN-OS-PRO| |Script v3.1.0| |Maintained By Muhammed-Mert| |Original by NamelessNanasi/CortezJEL"
+echo "|ZORIN-OS-PRO| |Script v3.1.1| |Maintained By Muhammed-Mert| |Original by NamelessNanasi/CortezJEL"
 echo ""
 echo "(Please note this version works on Zorin 16, 17, and 18)"
-sleep 5
+sleep 3
 
-# Prompt user
+# Prompt user for sudo
 echo "Please Enter your sudo password!"
 sudo echo > /dev/null
 
-# Parse command line arguments for flag
-while getopts "678" opt; do
-  case $opt in
-    6)
+# Prompt user to select Zorin version
+echo "Select your Zorin version:"
+echo "1) Zorin 16"
+echo "2) Zorin 17"
+echo "3) Zorin 18"
+read -p "Enter 1, 2, or 3: " version_choice
+
+# Set flags based on selection
+case $version_choice in
+    1)
         sixteen="true"
         seventeen="false"
         eighteen="false"
-    ;;
-    7)
+        ;;
+    2)
         sixteen="false"
         seventeen="true"
         eighteen="false"
-    ;;
-    8)
+        ;;
+    3)
         sixteen="false"
         seventeen="false"
         eighteen="true"
-    ;;
-  esac
-done
+        ;;
+    *)
+        echo "Invalid selection. Exiting..."
+        exit 1
+        ;;
+esac
 
 echo "Preparing to install dependencies..."
 sudo apt install -y ca-certificates aptitude
