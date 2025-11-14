@@ -23,5 +23,5 @@ sudo apt update && sudo apt install git -y && git clone https://github.com/Muham
 
 **Changelog**:
 
-- v3.1.0 – Added support for Zorin 18 Beta
+- v3.1.0 – Added support for Zorin 18
 - v3.1.2 & v3.1.3 – Bugs fixed
